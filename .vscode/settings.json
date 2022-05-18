@@ -1,0 +1,17 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true,
+    "source.fixAll": true,
+    "source.format": true,
+    "source.format.eslint": true,
+    "source.format.tslint": true,
+    "source.fixAll.tslint": true
+  },
+  "editor.fontSize": 14,
+  "window.zoomLevel": 1,
+  "code-runner.executorMap": {
+    "typescript": "clear && npx ts-node --files --transpile-only",
+  },
+  "liveServer.settings.port": 5501
+}
