@@ -62,7 +62,6 @@ const Home = () => {
 
 				</Content>
 
-
       <Footer style={{position: 'absolute', bottom: '0px', width: '100vw', backgroundColor: '#eaeaec'}}>By @Tony</Footer>
     </Layout>
 	);

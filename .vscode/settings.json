@@ -10,10 +10,6 @@
   },
   "editor.fontSize": 14,
   "window.zoomLevel": 1,
-  "code-runner.executorMap": {
-    "typescript": "clear && npx ts-node --files --transpile-only",
-  },
-  "liveServer.settings.port": 5501,
   "cSpell.words": [
     "antd"
   ]

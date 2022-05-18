@@ -1,7 +1,7 @@
 import { Avatar, Badge, Button, Modal } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import Header from '../../components/Header';
+import Header from '../../Components/Header';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import {
   handleDecrement,
@@ -34,7 +34,7 @@ const Dashboard = () => {
 	useEffect(() => {
 		setTimeout(() => {
 			showModal();
-		}, 1000);
+		}, 300);
 	}, []);
 
 

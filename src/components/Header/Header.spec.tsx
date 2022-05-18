@@ -10,8 +10,9 @@ export const renderTheme = (children: ReactNode) => {
 
 test('Header renders correctly', () => {
 	const { debug } = renderTheme(<Header />);
-	// debug();
-	const headingHome = screen.getByRole('heading', { name: 'Header' }).parentElement;
+	debug();
+
+	const headingHome = screen.getByRole('banner', { name: '' });
 	expect(headingHome).toBeInTheDocument();
 	expect(headingHome).toHaveStyle({
 		backgroundColor: theme.colors.info,
