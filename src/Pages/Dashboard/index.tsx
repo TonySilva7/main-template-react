@@ -6,17 +6,15 @@ import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import {
   handleDecrement,
   handleIncrement,
-  selectMyNum
+  selectMyNum,
 } from '../../slices/myReducer/mySlice';
 
-
 const Dashboard = () => {
-	const dispatch = useAppDispatch();
-	const myNum = useAppSelector(selectMyNum);
-	const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const myNum = useAppSelector(selectMyNum);
+  const navigate = useNavigate();
 
-
-	const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const showModal = () => {
     setIsModalVisible(true);
@@ -28,42 +26,57 @@ const Dashboard = () => {
 
   const handleCancel = () => {
     setIsModalVisible(false);
-		navigate('/');
+    navigate('/');
   };
 
-	useEffect(() => {
-		setTimeout(() => {
-			showModal();
-		}, 300);
-	}, []);
+  useEffect(() => {
+    setTimeout(() => {
+      showModal();
+    }, 300);
+  }, []);
 
-
-	return (
-		<>
-
-			<Modal title="Testando Redux" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+  return (
+    <>
+      <Modal
+        title="Testando Redux"
+        visible={isModalVisible}
+        onOk={handleOk}
+        onCancel={handleCancel}
+      >
         <p>Teste o Redux pressionando os botões desta página</p>
       </Modal>
 
-			<Header />
+      <Header />
 
-			<div style={{ marginLeft: '2rem' }}>
-				<h3>Teste o Redux nos botões abaixo!</h3>
-				<span style={{ display: 'flex' }}>
-					<Button type="primary" danger onClick={() => dispatch(handleDecrement())} style={{margin: '2rem'}}> - </Button>
+      <div style={{ marginLeft: '2rem' }}>
+        <h3>Teste o Redux nos botões abaixo!</h3>
+        <span style={{ display: 'flex' }}>
+          <Button
+            type="primary"
+            danger
+            onClick={() => dispatch(handleDecrement())}
+            style={{ margin: '2rem' }}
+          >
+            {' '}
+            -{' '}
+          </Button>
 
-					<Badge count={myNum}>
-						<Avatar shape="circle" size="large" />
-					</Badge>
+          <Badge count={myNum}>
+            <Avatar shape="circle" size="large" />
+          </Badge>
 
-					<Button type="primary" onClick={() => dispatch(handleIncrement())} style={{margin: '2rem'}}> + </Button>
-				</span>
-
-
-
-			</div>
-		</>
-	);
+          <Button
+            type="primary"
+            onClick={() => dispatch(handleIncrement())}
+            style={{ margin: '2rem' }}
+          >
+            {' '}
+            +{' '}
+          </Button>
+        </span>
+      </div>
+    </>
+  );
 };
 
 export default Dashboard;

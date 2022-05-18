@@ -6,28 +6,28 @@ import Home from '../Pages/Home';
 import { PrivateRoute } from './MyPrivateRoute';
 
 const AllRoutes = () => (
-	// <Router history={history}>
-	<BrowserRouter>
-		<Routes>
-      <Route path='/' element={<Home />} />
+  // <Router history={history}>
+  <BrowserRouter>
+    <Routes>
+      <Route path='/' element={ <Home /> } />
       {
-      /**
-        Esta é uma segunda opção para rotas privadas com children
+        /**
+          Esta é uma segunda opção para rotas privadas (com children)
 
-        <Route path="/dashboard" element={
-          <PrivateRouteWithChildren>
-            <Dashboard />
-          </PrivateRouteWithChildren>
-         }/>
-      */
+          <Route path="/dashboard" element={
+            <PrivateRouteWithChildren>
+              <Dashboard />
+            </PrivateRouteWithChildren>
+           }/>
+        */
       }
 
-      <Route path="/dashboard" element={<PrivateRoute />}>
-        <Route path="" element={<Dashboard />} />
+      <Route path="/dashboard" element={ <PrivateRoute /> }>
+        <Route path="" element={ <Dashboard /> } />
       </Route>
 
-		</Routes>
-	</BrowserRouter>
+    </Routes>
+  </BrowserRouter>
 );
 
 export default AllRoutes;

@@ -13,19 +13,18 @@ import { GlobalStyle } from './styles/GlobalStyle';
 import { theme } from './styles/theme';
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById('root') as HTMLElement,
 );
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-			<ConfigProvider locale={ptBR}>
-			<ThemeProvider theme={theme}>
-				<GlobalStyle />
-				<ToastContainer autoClose={3000} className='toast-container' />
-				<App />
-			</ThemeProvider>
-			</ConfigProvider>
-		</Provider>
-  </React.StrictMode>
+      <ConfigProvider locale={ptBR}>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <ToastContainer autoClose={3000} className="toast-container" />
+          <App />
+        </ThemeProvider>
+      </ConfigProvider>
+    </Provider>
+  </React.StrictMode>,
 );
-

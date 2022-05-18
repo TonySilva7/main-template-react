@@ -5,31 +5,31 @@ interface IConfig {
 }
 
 export class Api {
-	api: AxiosInstance;
+  api: AxiosInstance;
 
-	constructor() {
-		const api: AxiosInstance = axios.create({
-			baseURL: `https://${process.env.REACT_APP_API_URL}/`,
-		});
+  constructor() {
+    const api: AxiosInstance = axios.create({
+      baseURL: `https://${process.env.REACT_APP_API_URL}/`,
+    });
 
-		this.api = api;
-	}
+    this.api = api;
+  }
 
-	myHeader() {
-		/**
-		 * descomente para usar o token
-		 */
-		// const token = localStorage.getItem('@MyKey:token');
-		const config: IConfig = {
-			headers: {
-				/**
-				 * descomente para usar o token
-				 */
-				// Authorization: `Bearer ${token}`,
-				Accept: 'application/json',
-			},
-		};
+  myHeader() {
+    /**
+     * descomente para usar o token
+     */
+    // const token = localStorage.getItem('@MyKey:token');
+    const config: IConfig = {
+      headers: {
+        /**
+         * descomente para usar o token
+         */
+        // Authorization: `Bearer ${token}`,
+        Accept: 'application/json',
+      },
+    };
 
-		return config;
-	}
+    return config;
+  }
 }

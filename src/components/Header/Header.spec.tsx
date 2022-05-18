@@ -5,19 +5,19 @@ import Header from '.';
 import { theme } from '../../styles/theme';
 
 export const renderTheme = (children: ReactNode) => {
-	return render(<ThemeProvider theme={theme}>{children}</ThemeProvider>);
+  return render(<ThemeProvider theme={theme}>{children}</ThemeProvider>);
 };
 
 test('Header renders correctly', () => {
-	const { debug } = renderTheme(<Header />);
-	debug();
+  const { debug } = renderTheme(<Header />);
+  debug();
 
-	const headingHome = screen.getByRole('banner', { name: '' });
-	expect(headingHome).toBeInTheDocument();
-	expect(headingHome).toHaveStyle({
-		backgroundColor: theme.colors.info,
-	});
+  const headingHome = screen.getByRole('banner', { name: '' });
+  expect(headingHome).toBeInTheDocument();
+  expect(headingHome).toHaveStyle({
+    backgroundColor: theme.colors.info,
+  });
 
-	// const { container } = renderTheme(<Header />);
-	// expect(container).toMatchSnapshot();
+  // const { container } = renderTheme(<Header />);
+  // expect(container).toMatchSnapshot();
 });
