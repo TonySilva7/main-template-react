@@ -1,9 +1,8 @@
 import React from 'react';
+import AllRoutes from './routes';
 
-function App() {
-  return (
-    <h1>Hello</h1>
-  );
+function App(): JSX.Element {
+	return <AllRoutes />;
 }
 
 export default App;
