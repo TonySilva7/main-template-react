@@ -1,10 +1,12 @@
-version: '3'
+version: '3.8'
 
 services:
   app:
+    container_name: vaquinha-dev
+    image: vaquinha
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile.prod
     volumes:
       - ./src:/app/src
     ports:
