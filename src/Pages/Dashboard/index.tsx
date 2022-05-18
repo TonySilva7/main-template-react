@@ -1,6 +1,6 @@
 import { Avatar, Badge, Button, Modal } from 'antd';
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Header from '../../Components/Header';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import {
@@ -13,7 +13,7 @@ import {
 const Dashboard = () => {
 	const dispatch = useAppDispatch();
 	const myNum = useAppSelector(selectMyNum);
-	const history = useHistory();
+	const navigate = useNavigate();
 
 
 	const [isModalVisible, setIsModalVisible] = useState(false);
@@ -28,7 +28,7 @@ const Dashboard = () => {
 
   const handleCancel = () => {
     setIsModalVisible(false);
-		history.push('/');
+		navigate('/');
   };
 
 	useEffect(() => {
