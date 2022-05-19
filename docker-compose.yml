@@ -3,11 +3,18 @@ version: '3.8'
 services:
   app:
     container_name: vaquinha-dev
-    image: vaquinha
+    image: vaquinha-dev
     build:
       context: .
-      dockerfile: Dockerfile.prod
+      dockerfile: Dockerfile.dev
     volumes:
       - ./src:/app/src
     ports:
       - '3000:3000'
+    networks:
+      - vaquinha-dev
+    restart: always
+
+networks:
+  vaquinha-dev:
+    driver: bridge
