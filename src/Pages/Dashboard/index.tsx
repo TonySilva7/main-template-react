@@ -1,12 +1,12 @@
 import { Avatar, Badge, Button, Modal } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '../../Components/Header';
+import Header from '../../components/Header';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import {
   handleDecrement,
   handleIncrement,
-  selectMyNum,
+  selectMyNum
 } from '../../slices/myReducer/mySlice';
 
 const Dashboard = () => {
